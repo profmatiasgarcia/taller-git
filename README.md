@@ -508,5 +508,24 @@ Tenga en cuenta que `git pull` es equivalente a realizar `git fetch` seguido de 
        +                +                +                +
 
 ```
+## Branches
 
+Se recomienda leer el [capítulo 3: Ramificaciones en Git][2] del libro [Pro Git][3] de Scott Chacon y Ben Straub.
+
+## Cómo trabajar en equipo con `git`
+
+![](imagenes/img-01.png)
+
+Se recomienda leer el [capítulo 5: Git en entornos distribuidos][5] del libro [Pro Git][3] de Scott Chacon y Ben Straub.
+
+## El archivo `.gitignore`
+
+Dentro del directorio raíz de nuestro proyecto podemos tener un archivo especial llamado `.gitignore` donde indicamos los archivos o tipos de archivos que queremos que sean ignorados por `git`. 
+
+Por ejemplo, si en nuestro repositorio no queremos guardar archivos `*.class` y `*.log` tendríamos el siguiente contenido en el archivo `.gitignore`:
+
+```
+*.class
+*.log
+```
 
