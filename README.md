@@ -15,10 +15,10 @@ En este taller de introducción a `git` y [GitHub][1] aprenderemos los comandos 
   1.10 [El archivo `.gitignore`](#el-archivo-gitignore)  
   1.11 [Consultar el historial de *commits*](#consultar-el-historial-de-commits)  
 2. [GitHub](#github)  
-  2.1 [Creación de un nuevo usuario](#crear-un-nuevo-usuario)  
+  <!-- 2.1 [Creación de un nuevo usuario](#crear-un-nuevo-usuario)  
   2.2 [Configuración de GitHub](#configuración-de-github)  
   2.3 [*Pull Requests* en GitHub](#pull-requests-en-github)  
-  2.4 [*Issues* en GitHub](#issues-en-github)  
+  2.4 [*Issues* en GitHub](#issues-en-github)   -->
 
 # `git`
 
