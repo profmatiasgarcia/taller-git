@@ -391,4 +391,122 @@ A la hora de mover/renombrar archivos nos podemos encontrar los mismos casos que
 git mv archivo.txt nuevo_nombre.txt
 git commit -m "Se renombra archivo.txt por nuevo_nombre.txt"
 ```
+## Cómo trabajar con un repositorio remoto
+
+Existen dos opciones para empezar a trabajar con un repositorio remoto.
+
+1. Cuando no partimos de ningún repositorio local y lo que queremos hacer es **clonar** el repositorio remoto en nuestra máquina.
+2. Cuando ya tenemos creado un repositorio local y queremos **añadir** un repositorio remoto para sincronizarnos.
+
+### Opción 1: Clonar un repositorio remoto
+
+```
+git clone <url_del_repositorio_remoto>
+```
+
+**Ejemplo:**
+
+```
+git clone https://github.com/profmatiasgarcia/taller-git.git
+```
+
+Al clonar este repositorio se nos creará un directorio en nuestra máquina con el nombre `taller-git` con el contenido del repositorio remoto.
+
+Esta es la opción que yo personalmente suelo utilizar a la hora de trabajar con repositorios remotos. En primer lugar creo el repositorio remoto en `GitHub` y luego hago un `git clone` para clonarlo en mi máquina local.
+
+### Opción 2: Añadir un repositorio remoto a un repositorio ya existente
+
+```
+git remote add <alias> <url_del_repositorio_remoto>
+```
+
+**Ejemplo:**
+
+Suponemos que ya tenemos creado un repositorio local y queremos añadir el repositorio remoto del taller de git. En este caso hemos usado `tallerGit` como alias. Este sería el comando que tendríamos que ejecutar:
+
+```
+git remote add tallerGit https://github.com/profmatiasgarcia/taller-git.git
+```
+
+Para comprobar si el repositorio remoto se ha añadido correctamente ejecutamos:
+
+```
+git remote -v
+```
+
+El comando anterior nos devolverá estas dos líneas:
+
+```
+tallerGit	https://github.com/profmatiasgarcia/taller-git.git (fetch)
+tallerGit	https://github.com/profmatiasgarcia/taller-git.git (push)
+```
+
+La primera línea acabada con la palabra *(fetch)* indica que esa es la url del repositorio remoto desde el que podemos recibir cambios.
+
+La segunda línea acabada con la palabra *(push)* indica que esa es la url del repositorio remoto donde podemos enviar nuestros cambios.
+
+### Comandos básicos para trabajar con un repositorio remoto
+
+Utilizaremos los mismos comandos que usamos para trabajar con un repositorio local y además añadiremos `git push` y `git pull`.
+
+#### Enviamos los cambios con `push`
+
+```
+git push <alias> <branch local>
+```
+
+Usamos este comando para enviar al repositorio remoto los *commits* que hemos hecho en nuestro repositorio local. La forma más habitual de usarlo es hacerlo después de cada `commit`.
+
+```
++-------------+  +-------------+  +-------------+  +-------------+
+|  Workspace  |  |   Staging   |  |    Local    |  |    Remote   |
+|             |  |     Area    |  |  Repository |  |  Repository |
++------+------+  +------+------+  +------+------+  +------+------+
+       |                |                |                |
+       |                |                |   git push     |
+       |                |                | -------------> |
+       |                |                |                |
+       |                |                |                |
+       |                |                |                |
+       |                |                |                |
+       |                |                |                |
+       +                +                +                +
+
+```
+
+**Ejemplo:**
+
+```
+git add archivo.txt
+git commit -m "Actualizamos el archivo.txt"
+git push tallerGit master
+```
+
+#### Recibimos los cambios con `pull`
+
+```
+git pull <alias> <branch local>
+```
+
+Usamos este comando para recibir los nuevos *commits* que existen en el repositorio remoto y aún no tenemos en nuestro repositorio local. Además de recibir los nuevos cambios, los fusiona con el contenido de nuestro repositorio local, actualizando de este modo los archivos que tengamos en la sección `Local Repository` y `Workspace`. Esto quiere decir que si teníamos un archivo con estado `Modified` en la sección `Workspace` se perderían todos los cambios.
+
+Tenga en cuenta que `git pull` es equivalente a realizar `git fetch` seguido de `git merge`.
+
+```
++-------------+  +-------------+  +-------------+  +-------------+
+|  Workspace  |  |   Staging   |  |    Local    |  |    Remote   |
+|             |  |     Area    |  |  Repository |  |  Repository |
++------+------+  +------+------+  +------+------+  +------+------+
+       |                |                |                |
+       |                |                |    git pull    |
+       |                |                | <------------- |
+       |                |                |                |
+       | <----------------------------------------------- |
+       |                |                |                |
+       |                |                |                |
+       |                |                |                |
+       +                +                +                +
+
+```
+
 
