@@ -2,6 +2,24 @@
 
 En este taller de introducción a `git` y [GitHub][1] aprenderemos los comandos básicos para empezar a trabajar con repositorios de forma local y remota.
 
+1. [`git`](#git)  
+  1.1 [Instalación y configuración de `git`](#instalación-y-configuración-de-git)  
+  1.2 [Secciones principales de un repositorio `git`](#secciones-principales-de-un-repositorio-git)  
+  1.3 [Estados de un archivo en `git`](#estados-de-un-archivo-en-git)  
+  1.4 [Cómo trabajar con un repositorio local](#cómo-trabajar-con-un-repositorio-local)  
+  1.5 [Cómo deshacer cambios](#cómo-deshacer-cambios)  
+  1.6 [Borrando y moviendo/renombrando archivos](#borrando-y-moviendorenombrando-archivos)  
+  1.7 [Cómo trabajar con un repositorio remoto](#cómo-trabajar-con-un-repositorio-remoto)  
+  1.8 [Branches](#branches)  
+  1.9 [Cómo trabajar en equipo con `git`](#cómo-trabajar-en-equipo-con-git)  
+  1.10 [El archivo `.gitignore`](#el-archivo-gitignore)  
+  1.11 [Consultar el historial de *commits*](#consultar-el-historial-de-commits)  
+2. [GitHub](#github)  
+  2.1 [Creación de un nuevo usuario](#crear-un-nuevo-usuario)  
+  2.2 [Configuración de GitHub](#configuración-de-github)  
+  2.3 [*Pull Requests* en GitHub](#pull-requests-en-github)  
+  2.4 [*Issues* en GitHub](#issues-en-github)  
+
 # `git`
 
 ## Instalación y configuración de `git`
