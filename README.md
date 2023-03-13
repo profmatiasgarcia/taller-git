@@ -516,7 +516,7 @@ Se recomienda leer el [capítulo 3: Ramificaciones en Git][2] del libro [Pro Git
 
 ![](imagenes/img-01.png)
 
-Se recomienda leer el [capítulo 5: Git en entornos distribuidos][5] del libro [Pro Git][3] de Scott Chacon y Ben Straub.
+Se recomienda leer el [capítulo 5: Git en entornos distribuidos][4] del libro [Pro Git][3] de Scott Chacon y Ben Straub.
 
 ## El archivo `.gitignore`
 
@@ -528,4 +528,40 @@ Por ejemplo, si en nuestro repositorio no queremos guardar archivos `*.class` y 
 *.class
 *.log
 ```
+## Consultar el historial de *commits*
 
+Para consultar el historial de *commits* podemos usar el comando `git log`. Este comando muestra información bastante completa de cada uno de los *commits* que se han realizado en el repositorio. Para cada *commit* podemos consultar cuál es la suma de comprobación SHA-1, el nombre, la dirección de correo del autor, la fecha/hora y el mensaje de confirmación del autor.
+
+```
+git log
+```
+
+La opción `--oneline` nos muestra menos información del historial, mostrando una única línea por *commit*.
+
+```
+git log --oneline
+```
+
+La opción `--graph` muestra el historial de *branches* y *merges* con un sencillo gráfico ASCII.
+
+```
+git log --graph
+```
+
+# GitHub
+
+Se recomienda leer el [capítulo 6: GitHub][5], del libro [Pro Git][3] de Scott Chacon y Ben Straub.
+
+## Referencias
+
+* [Pro Git](https://git-scm.com/book/es/v2). Scott Chacon, Ben Straub.
+
+## Licencia
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">licencia de Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional</a>.
+
+[1]: https://github.com
+[2]: https://git-scm.com/book/es/v2/Ramificaciones-en-Git-%C2%BFQu%C3%A9-es-una-rama%3F
+[3]: https://git-scm.com/book/es/v2
+[4]: https://git-scm.com/book/es/v2/Git-en-entornos-distribuidos-Flujos-de-trabajo-distribuidos
+[5]: https://git-scm.com/book/es/v2/GitHub-Creaci%C3%B3n-y-configuraci%C3%B3n-de-la-cuenta
